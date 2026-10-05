@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NaijaMarket - Buy and discover properties, cars, phones, electronics and more in Nigeria.">
+
   <title>NaijaMarket - Buy & Discover in Nigeria</title>
 
   <style>
@@ -14,62 +14,73 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, sans-serif;
       background: #f5f6f7;
       color: #222;
     }
 
     header {
-      background: #ffffff;
+      background: white;
       border-bottom: 1px solid #ddd;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
     }
 
     .topbar {
       max-width: 1200px;
       margin: auto;
-      padding: 16px 20px;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
     }
 
     .logo {
       font-size: 25px;
-      font-weight: 800;
+      font-weight: bold;
       color: #087f3f;
-      white-space: nowrap;
+      text-decoration: none;
     }
 
     .logo span {
       color: #222;
     }
 
-    .admin-link {
-      color: #087f3f;
+    nav {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    nav a {
       text-decoration: none;
-      font-size: 14px;
+      color: #333;
       font-weight: bold;
     }
 
+    .sell-btn {
+      background: #087f3f;
+      color: white !important;
+      padding: 10px 16px;
+      border-radius: 7px;
+    }
+
     .hero {
-      background: linear-gradient(135deg, #087f3f, #0b9b50);
+      background: linear-gradient(135deg, #087f3f, #0b9550);
       color: white;
-      padding: 55px 20px;
       text-align: center;
+      padding: 60px 20px;
     }
 
     .hero h1 {
-      font-size: 38px;
+      font-size: 42px;
       margin-bottom: 12px;
     }
 
     .hero p {
       font-size: 17px;
-      margin-bottom: 28px;
+      margin-bottom: 25px;
     }
 
     .search-box {
@@ -108,7 +119,422 @@
     }
 
     .section-title {
+      margin-bottom: 20px;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .category {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 25px 10px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .category:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    }
+
+    .icon {
+      font-size: 35px;
+      margin-bottom: 8px;
+    }
+
+    .listings {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .card-image {
+      height: 160px;
+      background: #e7f3ec;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 20
+      justify-content: center;
+      font-size: 55px;
+    }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .price {
+      color: #087f3f;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .location {
+      color: #777;
+      margin-top: 5px;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 900px) {
+      .categories {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .listings {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .topbar {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .listings {
+        grid-template-columns: 1fr;
+      }
+
+      .search-box {
+        flex-direction: column;
+      }
+
+      .search-box button {
+        padding: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="topbar">
+
+    <a href="#" class="logo">
+      Naija<span>Market</span>
+    </a>
+
+    <nav>
+      <a href="#categories">Categories</a>
+      <a href="#listings">Listings</a>
+      <a href="#sell" class="sell-btn">Sell an Item</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<section class="hero">
+
+  <h1>Buy & Discover in Nigeria</h1>
+
+  <p>
+    Find great products, cars, properties, phones and more on NaijaMarket.
+  </p>
+
+  <form class="search-box" id="searchForm">
+
+    <input
+      type="search"
+      id="searchInput"
+      placeholder="What are you looking for?"
+    >
+
+    <button type="submit">
+      Search
+    </button>
+
+  </form>
+
+</section>
+
+
+<main class="container">
+
+  <section id="categories">
+
+    <div class="section-title">
+      <h2>Popular Categories</h2>
+    </div>
+
+    <div class="categories">
+
+      <div class="category" data-category="property">
+        <div class="icon">🏠</div>
+        <strong>Properties</strong>
+      </div>
+
+      <div class="category" data-category="car">
+        <div class="icon">🚗</div>
+        <strong>Cars</strong>
+      </div>
+
+      <div class="category" data-category="phone">
+        <div class="icon">📱</div>
+        <strong>Phones</strong>
+      </div>
+
+      <div class="category" data-category="electronics">
+        <div class="icon">💻</div>
+        <strong>Electronics</strong>
+      </div>
+
+      <div class="category" data-category="fashion">
+        <div class="icon">👕</div>
+        <strong>Fashion</strong>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="listings">
+
+    <div class="section-title">
+      <h2>Featured Listings</h2>
+    </div>
+
+    <div class="listings" id="listingGrid">
+
+
+      <article class="card" data-search="toyota camry car lagos">
+
+        <div class="card-image">🚗</div>
+
+        <div class="card-body">
+
+          <h3>Toyota Camry 2020</h3>
+
+          <div class="price">
+            ₦18,500,000
+          </div>
+
+          <div class="location">
+            Lagos, Nigeria
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="card" data-search="iphone phone abuja">
+
+        <div class="card-image">📱</div>
+
+        <div class="card-body">
+
+          <h3>iPhone 15 Pro Max</h3>
+
+          <div class="price">
+            ₦1,250,000
+          </div>
+
+          <div class="location">
+            Abuja, Nigeria
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="card" data-search="house property lekki">
+
+        <div class="card-image">🏠</div>
+
+        <div class="card-body">
+
+          <h3>3 Bedroom Apartment</h3>
+
+          <div class="price">
+            ₦75,000,000
+          </div>
+
+          <div class="location">
+            Lekki, Lagos
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="card" data-search="laptop electronics ibadan">
+
+        <div class="card-image">💻</div>
+
+        <div class="card-body">
+
+          <h3>HP Laptop</h3>
+
+          <div class="price">
+            ₦450,000
+          </div>
+
+          <div class="location">
+            Ibadan, Nigeria
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+  <section id="sell" style="margin-top:40px">
+
+    <h2>Want to sell?</h2>
+
+    <div style="
+      background:white;
+      padding:25px;
+      margin-top:15px;
+      border-radius:10px;
+      border:1px solid #ddd;
+    ">
+
+      <p>
+        List your product on NaijaMarket and reach buyers across Nigeria.
+      </p>
+
+      <br>
+
+      <button
+        class="sell-btn"
+        style="border:0;cursor:pointer;font-size:15px"
+        onclick="alert('Seller registration coming soon!')"
+      >
+        Start Selling
+      </button>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <strong>NaijaMarket</strong>
+
+  <p>
+    Buy, sell and discover products across Nigeria.
+  </p>
+
+  <p>
+    © 2026 NaijaMarket. All rights reserved.
+  </p>
+
+</footer>
+
+
+<script>
+
+  const searchForm =
+    document.getElementById("searchForm");
+
+  const searchInput =
+    document.getElementById("searchInput");
+
+  const cards =
+    document.querySelectorAll(".card");
+
+
+  function searchListings() {
+
+    const query =
+      searchInput.value.toLowerCase().trim();
+
+    cards.forEach(function(card) {
+
+      const text =
+        card.dataset.search.toLowerCase();
+
+      if (text.includes(query)) {
+
+        card.style.display = "";
+
+      } else {
+
+        card.style.display = "none";
+
+      }
+
+    });
+
+  }
+
+
+  searchForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    searchListings();
+
+  });
+
+
+  searchInput.addEventListener("input", searchListings);
+
+
+  document.querySelectorAll(".category")
+    .forEach(function(category) {
+
+      category.addEventListener("click", function() {
+
+        searchInput.value =
+          this.dataset.category;
+
+        searchListings();
+
+        document
+          .getElementById("listings")
+          .scrollIntoView({
+            behavior: "smooth"
+          });
+
+      });
+
+    });
+
+</script>
+
+</body>
+</html>
