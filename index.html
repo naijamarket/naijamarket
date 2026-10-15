@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#087443">
+  <meta name="description" content="NaijaMarket — discover deals, property, cars, electronics and more across Nigeria.">
+  <title>NaijaMarket — Buy Better. Sell Smarter.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-strip"><div class="container strip-inner"><span>🇳🇬 Proudly Nigerian • Marketplace for all 36 states + FCT</span><span class="strip-right">Start in Abuja. Grow across Nigeria.</span></div></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="NaijaMarket home">
+        <span class="brand-mark"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 11h32v26H8z" fill="none" stroke="currentColor" stroke-width="3" rx="5"/><path d="M8 18h32M17 11v26M31 11v26" fill="none" stroke="currentColor" stroke-width="3"/><path d="M17 24h14" stroke="currentColor" stroke-width="3"/></svg></span>
+        <span class="brand-copy"><strong>Naija<span>Market</span></strong><small>BUY BETTER. SELL SMARTER.</small></span>
+      </a>
+      <div class="header-location"><span class="pin">⌖</span><div><small>Marketplace location</small><strong>All Nigeria <span>⌄</span></strong></div></div>
+      <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+      <nav class="header-actions" id="headerActions">
+        <a href="#how-it-works" class="nav-link">How it works</a>
+        <button class="btn btn-outline" id="openAccount">Log in / Create account</button>
+        <button class="btn btn-primary" id="openPost"><span>＋</span> Post an item</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-pattern"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR NAIJA. YOUR MARKET.</div>
+          <h1>Find it in Nigeria.<br><span>Deal with confidence.</span></h1>
+          <p>From your next car or home to everyday essentials, discover listings from people across Nigeria — with a human team helping keep the marketplace safer.</p>
+          <div class="hero-actions"><button class="btn btn-yellow" id="heroPost">＋ Post for free</button><a class="btn btn-glass" href="#listings">Explore listings <span>↘</span></a></div>
+          <div class="hero-trust"><div class="avatar-stack"><i>NM</i><i>NG</i><i>✓</i></div><span><strong>Local listings. Human review.</strong><small>Every new listing is reviewed before it goes live.</small></span></div>
+        </div>
+        <div class="hero-art" aria-label="Nigerian marketplace illustration">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-card art-card-top"><span class="art-emoji">🏡</span><div><b>Find a place</b><small>Homes & land</small></div><span class="mini-arrow">↗</span></div>
+          <div class="art-card art-card-main"><div class="art-flag"><span></span><span></span><span></span></div><div class="art-main-title">One market.<br><em>All Nigeria.</em></div><div class="art-map">🇳🇬</div><div class="art-stats"><span><b>36 + FCT</b><small>States & territory</small></span><span><b>Many possibilities</b><small>Your next good deal</small></span></div></div>
+          <div class="art-card art-card-bottom"><span class="art-emoji">🚗</span><div><b>Ready for a new ride?</b><small>Cars, vans & more</small></div><span class="mini-arrow">↗</span></div>
+          <div class="floating-badge"><span>✓</span><div><b>Reviewed listings</b><small>Report suspicious posts</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-wrap container">
+      <form class="search-bar" id="searchForm">
+        <label class="search-field"><span>⌕</span><input id="searchInput" type="search" placeholder="What are you looking for today?" aria-label="Search listings"></label>
+        <label class="select-field"><span>⌖</span><select id="stateFilter" aria-label="Filter by state"><option value="">All Nigeria</option><option>Abuja (FCT)</option><option>Lagos</option><option>Kano</option><option>Rivers</option><option>Oyo</option><option>Kaduna</option><option>Enugu</option><option>Ogun</option><option>Delta</option><option>Anambra</option><option>Other state</option></select></label>
+        <button class="btn btn-primary search-submit" type="submit">Search listings <span>→</span></button>
+      </form>
+      <div class="search-note"><span>✓</span> Free to browse <span>•</span> No online payment required <span>•</span> Contact the marketplace to enquire</div>
+    </section>
+
+    <section class="categories-section container">
+      <div class="section-heading"><div><div class="eyebrow dark-eyebrow">EXPLORE THE MARKET</div><h2>What are you looking for?</h2></div><a href="#listings" class="text-link">View all listings <span>→</span></a></div>
+      <div class="category-grid" id="categoryGrid">
+        <button class="category active" data-category=""><span class="category-icon all">✳</span><b>All items</b><small>Browse everything</small></button>
+        <button class="category" data-category="Property"><span class="category-icon property">⌂</span><b>Property</b><small>Homes & land</small></button>
+        <button class="category" data-category="Vehicles"><span class="category-icon vehicles">🚘</span><b>Vehicles</b><small>Cars & more</small></button>
+        <button class="category" data-category="Electronics"><span class="category-icon electronics">▣</span><b>Electronics</b><small>Phones & gadgets</small></button>
+        <button class="category" data-category="Fashion"><span class="category-icon fashion">✦</span><b>Fashion</b><small>Wear it well</small></button>
+        <button class="category" data-category="Home & Living"><span class="category-icon home">⌂</span><b>Home & living</b><small>Make it yours</small></button>
+        <button class="category" data-category="Business & Equipment"><span class="category-icon business">⚙</span><b>Business</b><small>Tools & equipment</small></button>
+        <button class="category" data-category="Agriculture"><span class="category-icon agriculture">♧</span><b>Agriculture</b><small>Farm & produce</small></button>
+      </div>
+    </section>
+
+    <section class="listings-section" id="listings">
+      <div class="container">
+        <div class="section-heading listing-heading"><div><div class="eyebrow dark-eyebrow">GOOD FINDS, CLOSE TO HOME</div><h2>Discover on NaijaMarket</h2><p>Browse listings from around the country.</p></div><div class="listing-controls"><span id="listingCount">Featured examples</span><select id="sortFilter" aria-label="Sort listings"><option value="recent">Newest first</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option></select></div></div>
+        <div class="listing-grid" id="listingGrid"></div>
+        <div class="empty-state hidden" id="emptyState"><span>⌕</span><h3>No listings found</h3><p>Try a different keyword, category or state.</p><button class="btn btn-outline" id="clearFilters">Clear filters</button></div>
+        <div class="center-action"><button class="btn btn-outline btn-load" id="loadMore">Explore more listings <span>↓</span></button></div>
+        <p class="demo-note">Demo preview: sample listings are illustrations, not verified offers. Replace them with approved real listings before launch.</p>
+      </div>
+    </section>
+
+    <section class="safety-section">
+      <div class="container safety-grid">
+        <div class="safety-copy"><div class="eyebrow">SAFETY STARTS WITH US</div><h2>A better marketplace<br>begins with <span>trust.</span></h2><p>NaijaMarket is designed to review new posts, give people a way to report suspicious activity, and let the admin remove listings or block repeat offenders.</p><button class="btn btn-light" id="reportSafety">Report a suspicious listing <span>→</span></button></div>
+        <div class="safety-points"><div class="safety-point"><span>01</span><div><b>Review before publishing</b><p>New posts wait for admin approval before appearing publicly.</p></div><i>✓</i></div><div class="safety-point"><span>02</span><div><b>Report suspicious activity</b><p>Visitors can flag a listing for the admin to investigate.</p></div><i>⚑</i></div><div class="safety-point"><span>03</span><div><b>Admin-controlled contacts</b><p>Public enquiries go to the marketplace contact, not directly to the seller.</p></div><i>☎</i></div><div class="safety-point"><span>04</span><div><b>Block repeat offenders</b><p>Admin can disable a user after reviewing credible reports.</p></div><i>⊘</i></div></div>
+      </div>
+    </section>
+
+    <section class="how-section container" id="how-it-works"><div class="section-heading"><div><div class="eyebrow dark-eyebrow">SIMPLE FROM START TO FINISH</div><h2>How NaijaMarket works</h2></div></div><div class="steps-grid"><article class="step-card"><span class="step-number">01</span><div class="step-icon">📸</div><h3>Post your item</h3><p>Anyone in Nigeria can submit photos, a description, price and location for free.</p></article><article class="step-card"><span class="step-number">02</span><div class="step-icon">🛡️</div><h3>Admin reviews it</h3><p>The listing stays pending until the admin checks it and approves or rejects it.</p></article><article class="step-card"><span class="step-number">03</span><div class="step-icon">💬</div><h3>Buyers contact us</h3><p>Interested buyers message the marketplace contact to ask questions or negotiate.</p></article><article class="step-card"><span class="step-number">04</span><div class="step-icon">🤝</div><h3>Connect responsibly</h3><p>The admin can coordinate buyer and seller contact after making reasonable checks.</p></article></div></section>
+
+    <section class="cta-section"><div class="container cta-inner"><div><div class="eyebrow">YOUR NEXT CUSTOMER COULD BE HERE</div><h2>Have something to sell?</h2><p>Reach people looking for deals across Nigeria. Posting is free.</p></div><button class="btn btn-yellow" id="ctaPost">＋ Submit a listing</button></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-main"><a class="brand footer-brand" href="#"><span class="brand-mark"><svg viewBox="0 0 48 48"><path d="M8 11h32v26H8z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M8 18h32M17 11v26M31 11v26" fill="none" stroke="currentColor" stroke-width="3"/></svg></span><span class="brand-copy"><strong>Naija<span>Market</span></strong><small>BUY BETTER. SELL SMARTER.</small></span></a><p>A Nigeria-first marketplace built around discovery, human review and better connections.</p><div class="footer-links"><a href="#listings">Browse</a><a href="#how-it-works">How it works</a><button id="footerReport">Report a concern</button><button id="footerAdmin">Admin</button></div></div><div class="container footer-bottom"><span>© <span id="year"></span> NaijaMarket. All rights reserved.</span><span>🇳🇬 Made for Nigeria</span></div></footer>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="closeModal" aria-label="Close dialog">×</button>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+  <button class="support-launcher" id="supportLauncher" aria-label="Open NaijaMarket customer support"><span class="support-launcher-icon">✦</span><span><b>Need help?</b><small>Customer support</small></span><i>●</i></button>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
