@@ -4,7 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#087443">
-  <meta name="description" content="NaijaMarket — discover deals, property, cars, electronics and more across Nigeria.">
+  <meta name="description" content="Discover cars, property, phones, electronics, fashion, business equipment and services across Nigeria on NaijaMarket. Buy, sell, rent, swap and explore helpful services.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NaijaMarket">
+  <meta property="og:title" content="NaijaMarket — Buy Better. Sell Smarter.">
+  <meta property="og:description" content="Discover great finds, connect with buyers and sellers, and explore useful services across Nigeria.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23087443'/%3E%3Ctext x='50' y='67' font-size='58' text-anchor='middle' fill='white' font-family='Arial'%3EN%3C/text%3E%3C/svg%3E">
   <title>NaijaMarket — Buy Better. Sell Smarter.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +19,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="top-strip"><div class="container strip-inner"><span>🇳🇬 Proudly Nigerian • Marketplace for all 36 states + FCT</span><span class="strip-right">Start in Abuja. Grow across Nigeria.</span></div></div>
+  <div class="top-strip"><div class="container strip-inner"><span>🇳🇬 Proudly Nigerian • Marketplace for all 36 states + FCT</span><span class="strip-right">Discover. Connect. Grow across Nigeria.</span></div></div>
+  <div class="naija-ticker" aria-label="NaijaMarket highlights"><div class="ticker-track"><span>🇳🇬 MADE FOR NIGERIA</span><i>✦</i><span>DISCOVER LOCAL BUSINESSES</span><i>✦</i><span>BUY SMART. SELL SMARTER.</span><i>✦</i><span>GROW YOUR BRAND ACROSS STATES</span><i>✦</i><span>🇳🇬 MADE FOR NIGERIA</span><i>✦</i><span>DISCOVER LOCAL BUSINESSES</span><i>✦</i><span>BUY SMART. SELL SMARTER.</span><i>✦</i><span>GROW YOUR BRAND ACROSS STATES</span><i>✦</i></div></div>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#" aria-label="NaijaMarket home">
@@ -23,6 +31,9 @@
       <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
       <nav class="header-actions" id="headerActions">
         <a href="#how-it-works" class="nav-link">How it works</a>
+        <a href="#useful-services" class="nav-link">Useful services</a>
+        <a href="#advertise" class="nav-link">Advertise</a>
+        <a href="#faq" class="nav-link">FAQs</a>
         <button class="btn btn-outline" id="openAccount">Log in / Create account</button>
         <button class="btn btn-primary" id="openPost"><span>＋</span> Post an item</button>
       </nav>
@@ -35,12 +46,15 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR NAIJA. YOUR MARKET.</div>
-          <h1>Find it in Nigeria.<br><span>Deal with confidence.</span></h1>
+          <h1>Find your next great deal.<br><span>Made for Nigeria.</span></h1>
           <p>From your next car or home to everyday essentials, discover listings from people across Nigeria — with a human team helping keep the marketplace safer.</p>
+          <div class="hero-rotator" aria-live="polite"><span class="rotator-spark">✦</span><strong id="rotatingMessage">Your next great find could be here.</strong></div>
           <div class="hero-actions"><button class="btn btn-yellow" id="heroPost">＋ Post for free</button><a class="btn btn-glass" href="#listings">Explore listings <span>↘</span></a></div>
           <div class="hero-trust"><div class="avatar-stack"><i>NM</i><i>NG</i><i>✓</i></div><span><strong>Local listings. Human review.</strong><small>Every new listing is reviewed before it goes live.</small></span></div>
         </div>
         <div class="hero-art" aria-label="Nigerian marketplace illustration">
+          <div class="hero-photo-scene" aria-hidden="true"></div>
+          <div class="welcome-guide-card"><img src="assets/marketplace-support-host.png" alt="NaijaMarket customer support host" class="welcome-guide-photo"><div><b>Welcome to NaijaMarket! 👋</b><p>What would you like to do today?</p><div class="welcome-guide-actions"><a href="#listings">🛍️ Buy</a><a href="#how-it-works">🏷️ Sell</a></div></div></div>
           <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
           <div class="art-card art-card-top"><span class="art-emoji">🏡</span><div><b>Find a place</b><small>Homes & land</small></div><span class="mini-arrow">↗</span></div>
           <div class="art-card art-card-main"><div class="art-flag"><span></span><span></span><span></span></div><div class="art-main-title">One market.<br><em>All Nigeria.</em></div><div class="art-map">🇳🇬</div><div class="art-stats"><span><b>36 + FCT</b><small>States & territory</small></span><span><b>Many possibilities</b><small>Your next good deal</small></span></div></div>
@@ -75,11 +89,42 @@
 
     <section class="listings-section" id="listings">
       <div class="container">
-        <div class="section-heading listing-heading"><div><div class="eyebrow dark-eyebrow">GOOD FINDS, CLOSE TO HOME</div><h2>Discover on NaijaMarket</h2><p>Browse listings from around the country.</p></div><div class="listing-controls"><span id="listingCount">Featured examples</span><select id="sortFilter" aria-label="Sort listings"><option value="recent">Newest first</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option></select></div></div>
+        <div class="section-heading listing-heading"><div><div class="eyebrow dark-eyebrow">GOOD FINDS, CLOSE TO HOME</div><h2>Discover on NaijaMarket</h2><p>Browse listings from around the country.</p></div><div class="listing-controls"><span id="listingCount">Featured examples</span><button class="btn btn-outline saved-toggle" id="savedToggle" type="button" aria-pressed="false">♡ Saved items</button><select id="sortFilter" aria-label="Sort listings"><option value="recent">Newest first</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option></select></div></div>
         <div class="listing-grid" id="listingGrid"></div>
         <div class="empty-state hidden" id="emptyState"><span>⌕</span><h3>No listings found</h3><p>Try a different keyword, category or state.</p><button class="btn btn-outline" id="clearFilters">Clear filters</button></div>
         <div class="center-action"><button class="btn btn-outline btn-load" id="loadMore">Explore more listings <span>↓</span></button></div>
         <p class="demo-note">Demo preview: sample listings are illustrations, not verified offers. Replace them with approved real listings before launch.</p>
+      </div>
+    </section>
+
+
+    <section class="advertise-section" id="advertise">
+      <div class="container">
+        <div class="ad-section-head"><div><div class="eyebrow dark-eyebrow">GROW YOUR BUSINESS WITH NAIJAMARKET</div><h2>Put your brand in the spotlight. <span>🇳🇬</span></h2><p>Reserve space for business adverts, sponsored listings and campaigns reaching customers across Nigeria.</p></div><button class="btn btn-primary ad-enquire" type="button" data-ad-enquire>📣 Advertise with us</button></div>
+        <div class="ad-slot-grid">
+          <article class="ad-slot ad-slot-wide"><span class="ad-ribbon">AD SPACE · COMING SOON</span><div class="ad-slot-icon">📢</div><div><b>Featured brand banner</b><p>A high-visibility banner for brands, events and business campaigns.</p></div><button class="text-button" type="button" data-ad-enquire>Enquire about banner space →</button><span class="ad-orbit ad-orbit-one"></span><span class="ad-orbit ad-orbit-two"></span></article>
+          <article class="ad-slot"><span class="ad-ribbon">SPONSORED SLOT</span><div class="ad-slot-icon">🏪</div><b>Promote your shop</b><p>Highlight a real business, with clear sponsor labels and honest claims.</p><button class="text-button" type="button" data-ad-enquire>Ask about promotion →</button></article>
+          <article class="ad-slot"><span class="ad-ribbon">FEATURED LISTING</span><div class="ad-slot-icon">⭐</div><b>Give a listing more visibility</b><p>Promoted listings can be introduced with clear prices and approval rules.</p><button class="text-button" type="button" data-ad-enquire>Ask about featured listings →</button></article>
+        </div>
+        <p class="ad-disclaimer">Advertising enquiries are not live bookings yet. All adverts must be reviewed; paid placements will be labelled, prices disclosed before payment, and scams or prohibited claims rejected. No advertiser can buy a guarantee of trust or verification.</p>
+      </div>
+    </section>
+
+    <section class="services-section container" id="useful-services">
+      <div class="section-heading"><div><div class="eyebrow dark-eyebrow">MORE THAN BUYING & SELLING</div><h2>Useful services, all in one place</h2><p>Explore helpful tools and connect to trusted providers. Some services require setup before transactions can be completed.</p></div></div>
+      <div class="service-grid">
+        <article class="service-card service-card-featured"><span class="service-icon">📱</span><span class="service-label">LOST DEVICE HELP</span><h3>Looking for a lost phone?</h3><p>Use official device-finding tools to locate or secure your own missing phone. NaijaMarket cannot secretly track a person or a phone.</p><button class="btn btn-primary" id="lostDeviceHelp" type="button">Open safe tracking guide ↗</button></article>
+        <article class="service-card"><span class="service-icon">🚘</span><span class="service-label">VEHICLE TRACKING</span><h3>Track your vehicle</h3><p>Vehicle location requires an installed GPS tracker and an authorised provider account. Find what to check before choosing a tracker.</p><button class="btn btn-outline" id="vehicleTrackingHelp" type="button">View vehicle guide</button></article>
+        <article class="service-card"><span class="service-icon">📲</span><span class="service-label">AIRTIME SERVICES</span><h3>Airtime to cash</h3><p>Check how airtime conversion could work, understand fees, and request information. Live conversion is not enabled until a provider and secure backend are connected.</p><button class="btn btn-outline" id="airtimeCash" type="button">Check conversion info</button></article>
+        <article class="service-card"><span class="service-icon">🏪</span><span class="service-label">BUSINESS & WHOLESALE</span><h3>Buy in bulk or request a quote</h3><p>Help shops and suppliers connect about bulk products, equipment and business opportunities.</p><button class="btn btn-outline" id="wholesaleHelp" type="button">Request a quote</button></article>
+      </div>
+      <p class="service-safety-note">🔐 Safety first: only track devices or vehicles you own or are authorised to manage. Never share your phone unlock code, banking PIN, OTP or tracker password with a stranger.</p>
+    </section>
+
+    <section class="growth-section">
+      <div class="container growth-grid">
+        <div><div class="eyebrow">GROW WITH NAIJAMARKET</div><h2>Turn good finds into new opportunities.</h2><p>Promote a real listing, reach buyers in your area, or bring your business to a growing Nigeria-first marketplace.</p><button class="btn btn-yellow" id="growthPost" type="button">Start with a listing</button></div>
+        <div class="growth-points"><div><b>📣 Featured listings</b><span>Optional paid visibility, once payment processing is integrated.</span></div><div><b>🤝 Wholesale leads</b><span>Connect buyers and suppliers with clear enquiry records.</span></div><div><b>💚 Transparent fees</b><span>Show commissions and charges before a customer confirms any paid service.</span></div></div>
       </div>
     </section>
 
@@ -90,12 +135,66 @@
       </div>
     </section>
 
+    <section class="governance-section container" id="security-legal">
+      <div class="section-heading"><div><div class="eyebrow dark-eyebrow">PROTECTING PEOPLE & THE BRAND</div><h2>Security, rules & nationwide branches</h2><p>Clear rules, careful review and restricted staff access are part of the plan for a safer marketplace.</p></div></div>
+      <div class="governance-grid">
+        <article class="governance-card"><span>🛡️</span><h3>Fraud prevention</h3><p>Report suspicious listings, review posts before publication, limit repeated submissions, keep an investigation record and remove content that breaks marketplace rules.</p></article>
+        <article class="governance-card"><span>🔐</span><h3>Account & data security</h3><p>Production launch must use verified sign-in, server-enforced permissions, least-privilege access, secure file uploads, rate limits, backups and audit logs. Never share OTPs, passwords or secret keys.</p></article>
+        <article class="governance-card"><span>🏢</span><h3>State branches</h3><p>NaijaMarket can be organised into state offices and branch teams. Each branch should manage only its assigned area; the overall owner retains national oversight and can review branch activity.</p></article>
+        <article class="governance-card"><span>⚖️</span><h3>Fair enforcement</h3><p>Reports trigger investigation, not automatic guilt. Staff decisions should be recorded, sensitive actions reviewed, and affected users given a way to appeal where appropriate.</p></article>
+      </div>
+      <div class="governance-actions"><button class="btn btn-primary" id="openSecurityRules" type="button">Read security rules</button><button class="btn btn-outline" id="openDisclaimer" type="button">Read legal disclaimer</button><button class="btn btn-outline" id="openBranchModel" type="button">View branch admin structure</button></div>
+      <p class="governance-warning"><strong>Important:</strong> These website pages explain the intended rules. Real security controls, branch permissions and legal documents are not active until the Supabase backend, policies, staff accounts and final legal review are implemented and tested.</p>
+    </section>
+
     <section class="how-section container" id="how-it-works"><div class="section-heading"><div><div class="eyebrow dark-eyebrow">SIMPLE FROM START TO FINISH</div><h2>How NaijaMarket works</h2></div></div><div class="steps-grid"><article class="step-card"><span class="step-number">01</span><div class="step-icon">📸</div><h3>Post your item</h3><p>Anyone in Nigeria can submit photos, a description, price and location for free.</p></article><article class="step-card"><span class="step-number">02</span><div class="step-icon">🛡️</div><h3>Admin reviews it</h3><p>The listing stays pending until the admin checks it and approves or rejects it.</p></article><article class="step-card"><span class="step-number">03</span><div class="step-icon">💬</div><h3>Buyers contact us</h3><p>Interested buyers message the marketplace contact to ask questions or negotiate.</p></article><article class="step-card"><span class="step-number">04</span><div class="step-icon">🤝</div><h3>Connect responsibly</h3><p>The admin can coordinate buyer and seller contact after making reasonable checks.</p></article></div></section>
+
+
+    <section class="agent-network-section container" id="agent-network"><div class="agent-network-copy"><div class="eyebrow dark-eyebrow">GROW WITH NAIJAMARKET</div><h2>Customers, agents & one accountable manager.</h2><p>Customers can create customer accounts. People across Nigeria can apply to become agents in their state or area. Agent access begins only after the overall manager approves the application.</p><div class="agent-network-actions"><button class="btn btn-primary" id="openAgentAccount" type="button">🤝 Apply as an agent</button><button class="btn btn-outline" id="openAgentWallet" type="button">₦ Agent earnings room</button><button class="btn btn-outline" id="openCustomerAccount" type="button">👤 Customer account</button></div><small>Agent applications and earnings are preview-only until secure authentication, manager approvals, database permissions and a verified payment process are implemented.</small></div><div class="agent-network-visual"><div class="network-orbit">🇳🇬</div><div class="network-chip chip-manager">🔐 Overall manager<br><small>National oversight</small></div><div class="network-chip chip-agents">🤝 Approved agents<br><small>Assigned state / area</small></div><div class="network-chip chip-customers">🛍️ Customers<br><small>Personal accounts</small></div></div></section>
+
+    <section class="support-feature-section" id="contact-support">
+      <div class="container support-feature-card">
+        <div class="support-illustration" role="img" aria-label="Illustration of a friendly customer support representative wearing a headset">
+          <span class="support-spark support-spark-one">✦</span><span class="support-spark support-spark-two">✧</span>
+          <img class="support-host-photo" src="assets/marketplace-support-host.png" alt="NaijaMarket customer support host">
+          <div class="support-online-pill"><span></span> Support centre</div>
+        </div>
+        <div class="support-feature-copy"><div class="eyebrow dark-eyebrow">WE'RE HERE TO HELP</div><h2>Need a hand? <span>We've got you.</span></h2><p>Find answers about listings, advertising, safety, reporting suspicious activity and preparing your business for NaijaMarket.</p><div class="support-feature-actions"><button class="btn btn-primary" id="supportFeatureOpen" type="button">Open help centre</button><a class="btn btn-outline" href="#faq">Browse FAQs</a></div><small>Official contact channels will appear once configured. Never share passwords, OTPs or banking PINs with anyone claiming to be support.</small></div>
+      </div>
+    </section>
+
+    <section class="faq-section container" id="faq">
+      <div class="section-heading"><div><div class="eyebrow dark-eyebrow">HELP & ANSWERS</div><h2>Frequently asked questions</h2><p>Clear answers about buying, selling, safety, fees and how NaijaMarket is being prepared for launch.</p></div></div>
+      <div class="faq-list">
+        <details class="faq-item"><summary>What is NaijaMarket?</summary><p>NaijaMarket is being developed as a Nigeria-wide marketplace where people and businesses can discover goods, property, vehicles and business opportunities. The current website is a preview; some features are not connected to a live service yet.</p></details>
+        <details class="faq-item"><summary>Can I browse listings for free?</summary><p>Yes. Browsing the preview does not require payment. Some listings shown now are sample demonstrations, not verified offers. Real approved listings should replace these examples before public launch.</p></details>
+        <details class="faq-item"><summary>How do I post an item for sale?</summary><p>Use a “Post an item” button and follow the form. In this preview, submissions are not yet connected to a secure live database, so do not rely on the form to publish or store a real listing. Live posting will be enabled after the backend is connected and tested.</p></details>
+        <details class="faq-item"><summary>How are listings approved?</summary><p>The intended process is for new listings to remain pending until an authorised moderator reviews them. Approval checks can reduce risk, but they cannot guarantee that every seller, item or claim is genuine.</p></details>
+        <details class="faq-item"><summary>Does NaijaMarket guarantee sellers, goods or property?</summary><p>No. A review is not a guarantee. Before paying, inspect the item in person where possible, verify the seller’s identity and ownership documents, and independently confirm property titles or vehicle documents with the appropriate professionals or authorities.</p></details>
+        <details class="faq-item"><summary>How can I report a scam or suspicious listing?</summary><p>Use the “Report a suspicious listing” or “Report a concern” option when available. Provide the listing details and a clear explanation, but do not post your password, PIN, OTP, bank details or other private information. Reporting and investigation tools in this preview still need a live backend and support workflow.</p></details>
+        <details class="faq-item"><summary>Does NaijaMarket collect payment or hold money for buyers?</summary><p>Not in this preview. Do not send money to anyone claiming that NaijaMarket has guaranteed a deal, escrowed funds or processed a payment unless an official, verified payment service is clearly launched. Any future charges and commissions must be shown before you agree to pay.</p></details>
+        <details class="faq-item"><summary>Are there listing fees or commissions?</summary><p>Browsing and basic listing submission are intended to be free at launch, but final terms have not been confirmed. Paid promotions or service commissions may be introduced later only with clear prices, terms and a working payment system.</p></details>
+        <details class="faq-item"><summary>Can NaijaMarket convert airtime to cash?</summary><p>Not yet. The airtime-to-cash section is currently an information/enquiry concept, not a working conversion or payment service. Do not send airtime, money, PINs or OTPs to anyone based on the preview.</p></details>
+        <details class="faq-item"><summary>Can NaijaMarket track a lost phone or a vehicle?</summary><p>The website does not directly track devices. For a phone, use the official device-finding service for your own account. Vehicle tracking normally requires a properly installed GPS tracker and an authorised provider account. Never track a person or device without lawful authority or consent.</p></details>
+        <details class="faq-item"><summary>Will NaijaMarket have offices and admins in different states?</summary><p>That is the planned expansion model. State branch managers and staff should have individual accounts with access limited to their assigned duties and branch. The overall owner should retain national oversight. These roles are not secure or operational until server-side permissions and staff accounts are configured and tested.</p></details>
+        <details class="faq-item"><summary>How will NaijaMarket protect my information?</summary><p>The production version should use secure sign-in, limited staff permissions, protected database rules, safe file uploads, backups and audit logs. These controls must be implemented and tested before real personal information is collected. Never share your password, banking PIN or OTP with anyone claiming to be support.</p></details>
+        <details class="faq-item"><summary>What if a listing is rejected or my account is restricted?</summary><p>The intended process is to review the reason, record important moderation decisions and provide an appropriate way to ask for a review. A report should trigger investigation, not automatically prove that a person has done something wrong.</p></details>
+        <details class="faq-item"><summary>Does the disclaimer remove all responsibility from NaijaMarket?</summary><p>No. The disclaimer explains important limitations and user responsibilities, but it does not remove every legal obligation or replace Nigerian law. Final Terms of Service, privacy information and dispute procedures should be reviewed by a qualified Nigerian lawyer before launch.</p></details>
+        <details class="faq-item"><summary>What is the difference between a customer account and an agent account?</summary><p>Customers use their account to browse and manage their own activity. Agents are separate applicants who may help with approved marketplace tasks in an assigned state or area only after the overall manager verifies and approves them. An application does not automatically grant agent access.</p></details>
+        <details class="faq-item"><summary>Can anyone register as an agent in any Nigerian state?</summary><p>People may submit an agent application and select their state or FCT. Applications must be reviewed before approval. NaijaMarket may request lawful identity or reference checks, and must explain what information is collected and why. Do not pay an unofficial person to obtain an agent account.</p></details>
+        <details class="faq-item"><summary>Who controls the whole NaijaMarket platform?</summary><p>The intended structure has one overall owner/manager with national oversight. Agents do not receive owner privileges. The real hierarchy must be enforced in the backend; a public webpage or a role selected on a signup form cannot securely establish manager authority.</p></details>
+        <details class="faq-item"><summary>How do agent earnings and withdrawals work?</summary><p>The agent earnings room is currently a design preview only. No real balance, commission, deposit or withdrawal is active. Before launch, NaijaMarket must publish clear commission rules, record earnings in a protected server-side ledger, verify payments and provide a transparent withdrawal process. Never pay anyone to unlock a displayed demo balance.</p></details>
+        <details class="faq-item"><summary>Can you guarantee that no one will ever hack an account?</summary><p>No website can honestly guarantee that it can never be hacked. NaijaMarket should reduce risk through strong unique passwords, multi-factor authentication for the manager and staff, secure recovery, server-enforced permissions, database row-level security, rate limiting, monitoring, backups and regular security testing. These controls must be implemented and verified before launch.</p></details>
+        <details class="faq-item"><summary>How do I contact NaijaMarket support?</summary><p>Official support contacts will be displayed here once they have been configured and verified. Until then, be cautious of unofficial accounts claiming to represent NaijaMarket, and never share passwords, OTPs or banking credentials.</p></details>
+      </div>
+      <p class="faq-note"><strong>Please note:</strong> NaijaMarket is still being prepared for launch. These answers describe intended policies and planned features; they do not mean every service, security control or support process is already active.</p>
+    </section>
 
     <section class="cta-section"><div class="container cta-inner"><div><div class="eyebrow">YOUR NEXT CUSTOMER COULD BE HERE</div><h2>Have something to sell?</h2><p>Reach people looking for deals across Nigeria. Posting is free.</p></div><button class="btn btn-yellow" id="ctaPost">＋ Submit a listing</button></div></section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-main"><a class="brand footer-brand" href="#"><span class="brand-mark"><svg viewBox="0 0 48 48"><path d="M8 11h32v26H8z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M8 18h32M17 11v26M31 11v26" fill="none" stroke="currentColor" stroke-width="3"/></svg></span><span class="brand-copy"><strong>Naija<span>Market</span></strong><small>BUY BETTER. SELL SMARTER.</small></span></a><p>A Nigeria-first marketplace built around discovery, human review and better connections.</p><div class="footer-links"><a href="#listings">Browse</a><a href="#how-it-works">How it works</a><button id="footerReport">Report a concern</button><button id="footerAdmin">Admin</button></div></div><div class="container footer-bottom"><span>© <span id="year"></span> NaijaMarket. All rights reserved.</span><span>🇳🇬 Made for Nigeria</span></div></footer>
+  <footer class="site-footer"><div class="container footer-main"><a class="brand footer-brand" href="#"><span class="brand-mark"><svg viewBox="0 0 48 48"><path d="M8 11h32v26H8z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M8 18h32M17 11v26M31 11v26" fill="none" stroke="currentColor" stroke-width="3"/></svg></span><span class="brand-copy"><strong>Naija<span>Market</span></strong><small>BUY BETTER. SELL SMARTER.</small></span></a><p>A Nigeria-first marketplace built around discovery, human review and better connections.</p><div class="footer-links"><a href="#listings">Browse</a><a href="#how-it-works">How it works</a><a href="#useful-services">Useful services</a><a href="#advertise">Advertise</a><a href="#agent-network">Become an agent</a><a href="#contact-support">Contact support</a><a href="#faq">FAQs</a><button id="footerReport">Report a concern</button><button id="footerAdmin">Admin preview</button><button id="footerDisclaimer">Disclaimer</button><button id="footerSecurity">Security rules</button><button id="footerBranches">Branch structure</button></div></div>
+    <div class="container contact-social"><div><b>Need help?</b><p>Contact details can be enabled in <code>app.js</code> before publishing.</p><div class="contact-buttons"><a class="btn btn-outline contact-whatsapp hidden" id="contactWhatsApp" href="#" target="_blank" rel="noopener">WhatsApp support</a><a class="btn btn-outline contact-call hidden" id="contactCall" href="#">Call support</a><a class="btn btn-outline contact-email hidden" id="contactEmail" href="#">Email support</a></div></div><div><b>Follow NaijaMarket</b><p>Connect your official social profiles to share listings and campaigns.</p><div class="social-links" id="socialLinks"><span>Facebook · Instagram · TikTok · YouTube</span></div></div></div></div><div class="container footer-bottom"><span>© <span id="year"></span> NaijaMarket. All rights reserved.</span><span>🇳🇬 Made for Nigeria · Buy smart. Sell safely.</span></div></footer>
 
   <div class="modal-backdrop hidden" id="modalBackdrop">
     <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
