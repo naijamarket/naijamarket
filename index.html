@@ -54,7 +54,7 @@
         </div>
         <div class="hero-art" aria-label="Nigerian marketplace illustration">
           <div class="hero-photo-scene" aria-hidden="true"></div>
-          <div class="welcome-guide-card"><img src="assets/marketplace-support-host.png" alt="NaijaMarket customer support host" class="welcome-guide-photo"><div><b>Welcome to NaijaMarket! 👋</b><p>What would you like to do today?</p><div class="welcome-guide-actions"><a href="#listings">🛍️ Buy</a><a href="#how-it-works">🏷️ Sell</a></div></div></div>
+          <div class="welcome-guide-card welcome-text-card" aria-live="polite"><span class="welcome-card-kicker">🇳🇬 MADE FOR NIGERIA</span><div class="welcome-message-slot"><b id="welcomeRotatingTitle">Welcome to NaijaMarket</b><p id="welcomeRotatingText">Find what you need. Connect with confidence.</p></div><div class="welcome-guide-actions"><a href="#listings">Explore marketplace</a><a href="#how-it-works">How it works</a></div><button type="button" class="welcome-support-link" data-open-support>Need help? Talk to customer support ↗</button></div>
           <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
           <div class="art-card art-card-top"><span class="art-emoji">🏡</span><div><b>Find a place</b><small>Homes & land</small></div><span class="mini-arrow">↗</span></div>
           <div class="art-card art-card-main"><div class="art-flag"><span></span><span></span><span></span></div><div class="art-main-title">One market.<br><em>All Nigeria.</em></div><div class="art-map">🇳🇬</div><div class="art-stats"><span><b>36 + FCT</b><small>States & territory</small></span><span><b>Many possibilities</b><small>Your next good deal</small></span></div></div>
@@ -85,6 +85,16 @@
         <button class="category" data-category="Business & Equipment"><span class="category-icon business">⚙</span><b>Business</b><small>Tools & equipment</small></button>
         <button class="category" data-category="Agriculture"><span class="category-icon agriculture">♧</span><b>Agriculture</b><small>Farm & produce</small></button>
       </div>
+    </section>
+
+    <section class="exchange-rent-section container" id="swap-rent">
+      <div class="section-heading"><div><div class="eyebrow dark-eyebrow">MORE WAYS TO MAKE A DEAL 🇳🇬</div><h2>Swap it. Rent it. Find what you need.</h2><p>Explore exchanges and rentals for eligible items, vehicles and property.</p></div></div>
+      <div class="exchange-rent-grid">
+        <article class="exchange-rent-card swap-card"><div class="exchange-rent-icon">🔄</div><span class="feature-pill">SWAP & EXCHANGE</span><h3>Swap phones, cars, gadgets and more</h3><p>Offer an item for exchange and describe what you would accept. Both parties should inspect items, verify ownership and agree on any cash difference before exchanging.</p><button class="btn btn-primary" type="button" data-market-intent="swap">Explore swaps</button></article>
+        <article class="exchange-rent-card rent-card"><div class="exchange-rent-icon">🔑</div><span class="feature-pill">RENTALS</span><h3>Homes, cars, equipment and more</h3><p>Find or advertise house rentals, car hire, tools, event equipment and other lawful rental services. Confirm the terms, deposit, condition and ownership before paying.</p><button class="btn btn-primary" type="button" data-market-intent="rent">Explore rentals</button></article>
+        <article class="exchange-rent-card list-swap-card"><div class="exchange-rent-icon">📣</div><span class="feature-pill">LIST YOUR OFFER</span><h3>Have something to swap or rent?</h3><p>Submit the details for review. Listings are examples until connected to the live database; never advertise stolen goods or property you are not authorised to offer.</p><button class="btn btn-outline" type="button" id="submitSwapRent">Submit a swap or rental</button></article>
+      </div>
+      <p class="exchange-rent-note">Safety reminder: NaijaMarket does not guarantee ownership, condition, tenant, landlord or renter identity. Inspect, verify documents and use a written agreement where appropriate. These sections are a front-end preview until live listing filters and database support are connected.</p>
     </section>
 
     <section class="listings-section" id="listings">
@@ -156,10 +166,10 @@
       <div class="container support-feature-card">
         <div class="support-illustration" role="img" aria-label="Illustration of a friendly customer support representative wearing a headset">
           <span class="support-spark support-spark-one">✦</span><span class="support-spark support-spark-two">✧</span>
-          <img class="support-host-photo" src="assets/marketplace-support-host.png" alt="NaijaMarket customer support host">
+          <button type="button" class="support-photo-button feature-photo-button" data-open-support aria-label="Tap to chat with NaijaMarket customer support"><img class="support-host-photo" src="assets/marketplace-support-host.png" alt="Tap to open NaijaMarket customer support"></button>
           <div class="support-online-pill"><span></span> Support centre</div>
         </div>
-        <div class="support-feature-copy"><div class="eyebrow dark-eyebrow">WE'RE HERE TO HELP</div><h2>Need a hand? <span>We've got you.</span></h2><p>Find answers about listings, advertising, safety, reporting suspicious activity and preparing your business for NaijaMarket.</p><div class="support-feature-actions"><button class="btn btn-primary" id="supportFeatureOpen" type="button">Open help centre</button><a class="btn btn-outline" href="#faq">Browse FAQs</a></div><small>Official contact channels will appear once configured. Never share passwords, OTPs or banking PINs with anyone claiming to be support.</small></div>
+        <div class="support-feature-copy"><div class="eyebrow dark-eyebrow">WE'RE HERE TO HELP</div><h2>Need a hand? <span>We've got you.</span></h2><p>Find answers about listings, advertising, safety, reporting suspicious activity and preparing your business for NaijaMarket.</p><div class="support-feature-actions"><button class="btn btn-primary" id="supportFeatureOpen" type="button">Open help centre</button><a class="btn btn-outline" href="#faq">Browse FAQs</a></div><small>Tap the support photo or Open help centre to chat, WhatsApp, call or email us. Never share passwords, OTPs or banking PINs.</small></div>
       </div>
     </section>
 
@@ -202,7 +212,8 @@
       <div id="modalContent"></div>
     </section>
   </div>
-  <button class="support-launcher" id="supportLauncher" aria-label="Open NaijaMarket customer support"><span class="support-launcher-icon">✦</span><span><b>Need help?</b><small>Customer support</small></span><i>●</i></button>
+  <section class="live-chat-panel hidden" id="liveChatPanel" aria-label="NaijaMarket chat preview"><div class="live-chat-head"><div class="live-chat-avatar">🇳🇬</div><div><b>NaijaMarket Support</b><small><span class="chat-status-dot"></span> Help centre preview</small></div><button id="closeLiveChat" type="button" aria-label="Close chat">×</button></div><div class="live-chat-messages" id="liveChatMessages" aria-live="polite"><div class="chat-bubble agent-bubble">Welcome to NaijaMarket! 👋 What would you like help with today?</div><div class="chat-quick-actions"><button type="button" data-chat-quick="Buying or selling">🛍️ Buy / Sell</button><button type="button" data-chat-quick="Swapping an item">🔄 Swapping</button><button type="button" data-chat-quick="Renting a property, car or item">🔑 Rentals</button><button type="button" data-chat-quick="Reporting a safety concern">🛡️ Safety</button></div><div class="support-direct-actions"><a href="https://wa.me/2347073552208?text=Hello%20NaijaMarket%20Support" target="_blank" rel="noopener">🟢 WhatsApp us</a><a href="tel:+2347073552208">📞 Call support</a><a href="mailto:naijamarket9@gmail.com?subject=NaijaMarket%20Support">✉️ Email support</a></div><p class="chat-preview-note">This on-page chat is a preview; use WhatsApp, call or email for direct contact. Automated preview only. Messages are not sent to a real support agent until a live chat service is connected.</p></div><form id="liveChatForm" class="live-chat-form"><input id="liveChatInput" maxlength="500" placeholder="Type your question…" aria-label="Type your message" required><button type="submit">Send</button></form></section>
+  <button class="support-launcher" id="supportLauncher" aria-label="Open NaijaMarket customer support chat"><span class="support-launcher-icon">💬</span><span><b>Live chat</b><small>Chat with support</small></span><i>●</i></button>
   <div class="toast" id="toast" role="status"></div>
   <script src="app.js"></script>
 </body>

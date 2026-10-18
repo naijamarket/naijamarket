@@ -89,3 +89,66 @@ body{background:linear-gradient(180deg,#fff 0%,#fbfffc 45%,#fff 100%)}
 @media(max-width:760px){.hero-art{min-height:310px}.welcome-guide-card{left:1%;top:8%;width:min(340px,98%);padding:12px;gap:10px}.welcome-guide-photo{width:78px;height:102px}.hero-photo-scene{inset:8% 0 0 0}.support-host-photo{height:225px;width:min(220px,84%)}}
 @media(max-width:420px){.welcome-guide-card{top:5%;}.welcome-guide-card b{font-size:.94rem}.welcome-guide-card p{font-size:.82rem;margin:5px 0 9px}.welcome-guide-photo{width:68px;height:92px}.hero-art{min-height:275px}}
 @media(prefers-reduced-motion:reduce){.hero:before,.hero-pattern,.hero-photo-scene,.welcome-guide-card,.support-host-photo,.support-illustration:before,.support-spark{animation:none!important;scroll-behavior:auto!important}.ad-card,.advertise-card,.listing-card,.category-card{transition:none}}
+
+
+/* Stage 8: swaps, rentals and responsive support-chat preview */
+.exchange-rent-section{padding:54px 0}.exchange-rent-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.exchange-rent-card{position:relative;overflow:hidden;min-width:0;border:1px solid #d9eadf;border-radius:20px;padding:25px;background:linear-gradient(145deg,#fff,#f1fbf5);box-shadow:0 10px 30px #0641260b;transition:transform .25s,box-shadow .25s}.exchange-rent-card:hover{transform:translateY(-5px);box-shadow:0 16px 36px #06412618}.exchange-rent-card:before{content:"";position:absolute;width:150px;height:150px;border:1px solid #c8e8d3;border-radius:50%;right:-65px;top:-65px;animation:swapOrbit 12s linear infinite}.exchange-rent-icon{font-size:35px;margin-bottom:13px;animation:swapFloat 4s ease-in-out infinite}.feature-pill{display:inline-block;padding:6px 9px;border-radius:999px;background:#e0f5e8;color:#087443;font-size:9px;font-weight:900;letter-spacing:.08em}.exchange-rent-card h3{font:800 19px Manrope;line-height:1.35;margin:14px 0 9px}.exchange-rent-card p{font-size:12px;color:#64776b;line-height:1.75;margin:0 0 18px}.exchange-rent-card .btn{max-width:100%}.exchange-rent-note{background:#fff8e8;border:1px solid #f1dfae;border-radius:12px;padding:14px 16px;color:#6a541d;font-size:11px;line-height:1.7;margin-top:17px}@keyframes swapFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-7px) rotate(2deg)}}@keyframes swapOrbit{to{transform:rotate(360deg)}}
+.live-chat-panel{position:fixed;right:18px;bottom:82px;width:min(370px,calc(100vw - 24px));height:min(530px,calc(100dvh - 115px));z-index:40;background:#fff;border:1px solid #cfe5d6;border-radius:19px;box-shadow:0 22px 70px #002a1680;overflow:hidden;display:flex;flex-direction:column}.live-chat-panel.hidden{display:none}.live-chat-head{display:flex;align-items:center;gap:10px;padding:14px;background:linear-gradient(110deg,#075c35,#0c8c4e);color:white}.live-chat-avatar{display:grid;place-items:center;width:39px;height:39px;border-radius:50%;background:#ffffff25;font-size:20px}.live-chat-head b,.live-chat-head small{display:block}.live-chat-head b{font-size:13px}.live-chat-head small{font-size:10px;margin-top:4px;color:#d9f5e4}.chat-status-dot{display:inline-block;width:7px;height:7px;background:#8cf4b3;border-radius:50%;margin-right:4px}.live-chat-head button{margin-left:auto;background:transparent;border:0;color:white;font-size:26px;cursor:pointer}.live-chat-messages{flex:1;overflow:auto;padding:14px;background:radial-gradient(circle at 100% 0,#e5f7ec,transparent 40%),#f8fcf9}.chat-bubble{max-width:90%;padding:11px 12px;border-radius:12px;font-size:12px;line-height:1.6;margin-bottom:10px}.agent-bubble{background:#fff;border:1px solid #e0eee5;border-top-left-radius:3px}.visitor-bubble{background:#dff5e7;margin-left:auto;border-top-right-radius:3px}.chat-quick-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:10px 0}.chat-quick-actions button{border:1px solid #cfe6d6;background:white;border-radius:10px;padding:9px 6px;color:#075c35;font-size:10px;font-weight:700;cursor:pointer}.chat-preview-note{font-size:10px;line-height:1.6;color:#738378;background:#fff8e7;padding:9px;border-radius:8px}.live-chat-form{display:flex;gap:7px;padding:10px;border-top:1px solid #e1eee5;background:#fff}.live-chat-form input{min-width:0;flex:1;border:1px solid #d5e4d9;border-radius:9px;padding:11px;font:inherit;font-size:12px}.live-chat-form button{border:0;border-radius:9px;background:#087443;color:white;padding:0 14px;font-weight:800;cursor:pointer}.support-launcher{cursor:pointer}.support-launcher:focus-visible,.live-chat-panel button:focus-visible,.live-chat-form input:focus-visible{outline:3px solid #e3b341;outline-offset:2px}
+@media(max-width:760px){.exchange-rent-section{padding:38px 0}.exchange-rent-grid{grid-template-columns:1fr}.exchange-rent-card{padding:21px}.live-chat-panel{right:12px;bottom:78px;width:calc(100vw - 24px);height:min(520px,calc(100dvh - 100px))}.support-launcher{right:12px;bottom:12px}}
+@media(prefers-reduced-motion:reduce){.exchange-rent-card,.exchange-rent-card:before,.exchange-rent-icon{animation:none!important;transition:none!important}}
+
+/* Stage 9: stronger welcome animation and support photo opens help instead of displaying the image */
+.welcome-guide-card{transform-origin:55% 70%;animation:welcomeBounceShake 3.6s ease-in-out infinite;will-change:transform}
+.welcome-guide-photo{animation:welcomePhotoPop 2.8s ease-in-out infinite;transition:filter .2s}
+.welcome-guide-card:hover .welcome-guide-photo{filter:saturate(1.18) brightness(1.04)}
+@keyframes welcomeBounceShake{
+  0%,12%,100%{transform:translate3d(0,0,0) rotate(0deg) scale(1)}
+  2%{transform:translate3d(-5px,-2px,0) rotate(-2deg) scale(1.015)}
+  4%{transform:translate3d(6px,-3px,0) rotate(2.4deg) scale(1.02)}
+  6%{transform:translate3d(-5px,-1px,0) rotate(-2deg) scale(1.015)}
+  8%{transform:translate3d(4px,-2px,0) rotate(1.6deg) scale(1.01)}
+  10%{transform:translate3d(0,-7px,0) rotate(0deg) scale(1.015)}
+  50%{transform:translate3d(0,-5px,0) rotate(0deg) scale(1)}
+}
+@keyframes welcomePhotoPop{
+  0%,100%{transform:scale(1) rotate(0deg)}
+  40%{transform:scale(1.035) rotate(-1.4deg)}
+  48%{transform:scale(1.035) rotate(1.4deg)}
+  56%{transform:scale(1.02) rotate(0deg)}
+}
+.support-photo-button{display:block;padding:0;border:0;background:transparent;cursor:pointer;border-radius:inherit;max-width:100%;color:inherit}
+.support-photo-button:focus-visible{outline:3px solid #f7d95c;outline-offset:4px}
+.welcome-photo-button{flex:0 0 auto;border-radius:12px;overflow:hidden}
+.welcome-photo-button .welcome-guide-photo{display:block}
+.feature-photo-button{width:min(260px,88%);margin:auto;overflow:visible}
+.feature-photo-button .support-host-photo{width:100%;cursor:pointer}
+.support-direct-actions{display:grid;grid-template-columns:1fr;gap:7px;margin:12px 0}
+.support-direct-actions a{display:block;border:1px solid #cfe6d6;background:#fff;border-radius:10px;padding:11px 12px;color:#075c35;font-size:12px;font-weight:800;text-align:center}
+.support-direct-actions a:hover{background:#eaf8ef}
+@media(max-width:760px){.feature-photo-button{width:min(220px,84%)}}
+@media(prefers-reduced-motion:reduce){.welcome-guide-card,.welcome-guide-photo{animation:none!important;will-change:auto}}
+
+
+/* Stage 10 polish: calm, mature, text-led motion. Keep photos still. */
+.hero-photo-scene{display:none!important;animation:none!important;background:none!important}
+.art-card-top,.art-card-bottom,.art-card-main,.floating-badge,.art-orbit,.welcome-guide-card,.support-host-photo,.support-illustration:before,.support-spark,.support-online-pill{animation:none!important;will-change:auto!important}
+.art-card-top,.art-card-bottom,.floating-badge{display:none!important}
+.art-card-main{transform:none!important;box-shadow:0 22px 60px #001d1030;border-radius:24px}
+.welcome-guide-card.welcome-text-card{left:2%;top:15%;width:min(390px,96%);min-height:245px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:13px;padding:clamp(22px,4vw,32px);border:1px solid #ffffff50;border-radius:26px;background:linear-gradient(145deg,#ffffff 0%,#f2fbf5 100%);box-shadow:0 24px 65px #001d1033;color:#173b2a;transform:none!important}
+.welcome-card-kicker{font-size:10px;letter-spacing:1.8px;font-weight:800;color:#087443}
+.welcome-message-slot{min-height:91px;display:flex;flex-direction:column;justify-content:center;gap:8px;width:100%}
+.welcome-text-card b{font-size:clamp(22px,3vw,29px);line-height:1.2;letter-spacing:-.5px;color:#103b28}
+.welcome-text-card p{margin:0;color:#5c6e63;font-size:14px;line-height:1.6}
+.welcome-guide-actions{gap:9px;margin-top:2px}
+.welcome-guide-actions a{padding:11px 15px;border-radius:11px;transition:background .2s,color .2s}
+.welcome-guide-actions a:hover{transform:none;background:#075b38;color:#fff}
+.welcome-guide-actions a:last-child{background:#e5f4ea;color:#075b38}
+.welcome-support-link{margin-top:3px;padding:0;border:0;background:transparent;color:#087443;font-size:12px;font-weight:700;text-align:left}
+.welcome-support-link:hover{text-decoration:underline}
+.welcome-message-slot b,.welcome-message-slot p{opacity:1;transform:translateY(0);transition:opacity .45s ease,transform .45s ease}
+.welcome-message-slot.is-changing b,.welcome-message-slot.is-changing p{opacity:0;transform:translateY(8px)}
+.support-host-photo{transform:none!important;filter:none!important}
+.support-photo-button:hover .support-host-photo{transform:none!important;filter:brightness(1.02)!important}
+@media(max-width:760px){.hero-art{min-height:320px}.welcome-guide-card.welcome-text-card{left:1%;top:8%;width:98%;min-height:240px;padding:22px}.welcome-message-slot{min-height:84px}}
+@media(max-width:420px){.welcome-guide-card.welcome-text-card{top:5%;min-height:230px}.welcome-text-card b{font-size:23px}.welcome-text-card p{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.welcome-message-slot b,.welcome-message-slot p{transition:none!important}.hero-pattern{animation:none!important}}
